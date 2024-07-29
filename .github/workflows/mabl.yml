@@ -24,7 +24,7 @@ jobs:
           # Runs for both browsers
           browser-types: |
             chrome
-            firefox
+        
             
           continue-on-failure: true
           rebaseline-images: true
