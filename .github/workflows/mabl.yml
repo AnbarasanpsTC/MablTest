@@ -19,7 +19,7 @@ jobs:
         with:
           application-id: gHQ3r7Fa56kiZ0mQtoxMiQ-a
           environment-id: uezqVhDZ2MtTLF0Yn3rVtA-e
-          uri: rahulshettyacademy.com/client/
+         # uri: rahulshettyacademy.com/client/
         
           # Runs for both browsers
           browser-types: |
