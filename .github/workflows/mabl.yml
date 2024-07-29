@@ -1,0 +1,32 @@
+on: [push]
+
+name: mabl Complex Example
+
+jobs:
+  test:
+    name: mabl Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Functional test deployment
+        id: mabl-test-deployment
+        uses: mablhq/github-run-tests-action@v1
+        env:
+          # Use a "CI/CD Integration" type of mabl API key
+          MABL_API_KEY: ${{ secrets.MABL_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          application-id: gHQ3r7Fa56kiZ0mQtoxMiQ-a
+          environment-id: uezqVhDZ2MtTLF0Yn3rVtA-e
+          uri: rahulshettyacademy.com/client/
+        
+          # Runs for both browsers
+          browser-types: |
+            chrome
+            firefox
+            
+          continue-on-failure: true
+          rebaseline-images: true
+          set-static-baseline: true
+        
